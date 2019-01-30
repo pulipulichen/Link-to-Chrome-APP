@@ -9,12 +9,21 @@
   ga('send', 'pageview');
 
 </script>
-            <script type="text/javascript">
+<script type="text/javascript">
 
 var _url = findGetParameter("url");
 var _icon = findGetParameter("icon");
 
 function findGetParameter(parameterName) {
+  /*
+  if (parameterName === "url") {
+    return "http://blog.pulipuli.info/"
+  }
+  else if (parameterName === "icon") {
+    return "https://pulipulichen.github.io/Link-to-Chrome-APP/public/favicon.ico"
+  }
+  */
+  
     var result = undefined,
         tmp = [];
     location.search
@@ -41,8 +50,19 @@ else {
     }
 
     if (_url !== undefined) {
-        window.open(findGetParameter("url"), "_blank", "resizable,scrollbars=yes,status=1");
-        window.close();
+        //var win = window.open(findGetParameter("url"), "_blank", "resizable,scrollbars=yes,status=1");
+        var win = window.open("http://blog.pulipuli.info", "_blank", "resizable,scrollbars=yes,status=1");
+        
+        // 這邊要確認看看網頁是否有開啟，然後才關閉這個視窗
+        setTimeout(function () {
+          if (win !== null && win.window !== null) {
+            window.close();
+          }
+          else {
+            document.getElementById("message").innerHTML = "Popup is blocked."
+          }
+        }, 1000)
+        
     }
 }
 
@@ -51,5 +71,7 @@ else {
             </script>
             <title>Popup</title>
     </head>
-    <body></body>
+    <body>
+      <div id="message">Waiting open popup...</div>
+    </body>
 </html>
