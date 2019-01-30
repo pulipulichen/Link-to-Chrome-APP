@@ -7,3 +7,4 @@
 /tsconfig.json
 /src/*.txt
 /bin/*.txt
+/src/register-system-protocol.reg
