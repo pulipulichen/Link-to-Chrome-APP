@@ -3,3 +3,7 @@
 /register-system-protocol.reg
 /node_modules/
 /package-lock.json
+/*.txt
+/tsconfig.json
+/src/*.txt
+/bin/*.txt

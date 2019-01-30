@@ -8,8 +8,12 @@
         "client"
     ],
     "author": "Pulipuli Chen <pulipuli.chen@gmail.com>",
+    "scripts": {
+        "exe": "pkg -t node6-win src/register-system-protocol.js -o bin/register-system-protocol.exe && cd node_modules/rcedit/bin/ && rcedit.exe ../../../bin/register-system-protocol.exe --set-icon ../../../src/weka-icon.ico",
+        "icon": "cd node_modules/rcedit/bin/ && rcedit.exe ../../../register-system-protocol.exe --set-icon ../../../weka-icon.ico"
+    },
     "contributors": [],
     "dependencies": {
-        "pkg": "^4.3.7"
+        "rcedit": "^1.1.1"
     }
 }
