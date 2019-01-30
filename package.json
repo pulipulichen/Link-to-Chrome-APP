@@ -15,7 +15,6 @@
     },
     "contributors": [],
     "dependencies": {
-        "path": "^0.12.7",
-        "rcedit": "^1.1.1"
+        "path": "^0.12.7"
     }
 }
