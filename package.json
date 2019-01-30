@@ -9,7 +9,8 @@
     ],
     "author": "Pulipuli Chen <pulipuli.chen@gmail.com>",
     "scripts": {
-        "exe": "pkg -t node6-win src/register-system-protocol.js -o bin/register-system-protocol.exe && cd node_modules/rcedit/bin/ && rcedit.exe ../../../bin/register-system-protocol.exe --set-icon ../../../src/weka-icon.ico",
+        "exe": "pkg -t node6-win src/register-system-protocol.js -o bin/register-system-protocol.exe && cd bin && test-register-system-protocol.bat",
+        "exe2": "pkg -t node6-win src/open-chrome-app.js -o bin/open-chrome-app.exe && cd bin && test-open-chrome-app.bat",
         "icon": "cd node_modules/rcedit/bin/ && rcedit.exe ../../../register-system-protocol.exe --set-icon ../../../weka-icon.ico"
     },
     "contributors": [],
