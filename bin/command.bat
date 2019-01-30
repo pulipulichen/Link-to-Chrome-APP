@@ -1,1 +1,1 @@
-"C:/Program Files (x86)/Google/Chrome/Application/chrome.exe" --app=https://chrome-app://blog.pulipuli.info/
+"C:/Program Files (x86)/Google/Chrome/Application/chrome.exe" --app=http://blog.pulipuli.info

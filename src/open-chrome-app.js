@@ -1,12 +1,15 @@
 const fs = require('fs')
 
-var dirname = "D:/xampp/htdocs/nodejs-projects/Link-to-Chrome-APP/bin/"
+var dirname = process.execPath
+dirname = dirname.slice(0, dirname.lastIndexOf("\\") + 1)
 
+/*
 fs.writeFile(dirname + 'argvs.txt', JSON.stringify(process.argv, null, "\t"), function(err) {
     if(err) {
         return console.log(err);
     }
 }); 
+*/
 
 // 要先確認一下輸入的網址
 if (typeof(process.argv[2]) !== "string") {
@@ -18,6 +21,7 @@ var url = process.argv[2]
 if (url.startsWith("chrome-app://")) {
   url = url.slice( ("chrome-app://").length, url.length )
 }
+//url = decodeURIComponent(url)
 
 if (url.startsWith("//")) {
   url = "https:" + url
@@ -53,10 +57,11 @@ if (chromeLocation === undefined) {
 var command = '"' + chromeLocation + '" --app=' + url
 
 const { exec } = require('child_process');
-//exec(command)
-
-fs.writeFile(dirname + 'commend.bat', command, function(err) {
+exec(command)
+/*
+fs.writeFile(dirname + 'command.bat', command, function(err) {
     if(err) {
         return console.log(err);
     }
 }); 
+*/
